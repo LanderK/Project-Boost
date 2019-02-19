@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1379863574957354}
+  m_RootGameObject: {fileID: 1190972420839290}
   m_IsPrefabAsset: 1
---- !u!1 &1379863574957354
+--- !u!1 &1190972420839290
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4776858321630612}
-  - component: {fileID: 20080222982540574}
-  - component: {fileID: 81921845982565552}
+  - component: {fileID: 4304461146882992}
+  - component: {fileID: 20392660495316154}
+  - component: {fileID: 81789122840199194}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -28,25 +28,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4776858321630612
+--- !u!4 &4304461146882992
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1379863574957354}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_GameObject: {fileID: 1190972420839290}
+  m_LocalRotation: {x: -0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: 0, y: 2, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &20080222982540574
+  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 0}
+--- !u!20 &20392660495316154
 Camera:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1379863574957354}
+  m_GameObject: {fileID: 1190972420839290}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -81,10 +81,10 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &81921845982565552
+--- !u!81 &81789122840199194
 AudioListener:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1379863574957354}
+  m_GameObject: {fileID: 1190972420839290}
   m_Enabled: 1
