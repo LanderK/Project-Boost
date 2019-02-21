@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour {
 
-
+    //TODO Fix lighting bug
     [SerializeField] float rcsThrust = 150f;
     [SerializeField] float mainThrust = 25f;
 
     Rigidbody rigidBody;
     AudioSource audioSource;
-    
+
+    enum State {Alive, Dying, Tanscending};
+    State state = State.Alive;
+   
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
@@ -17,23 +21,43 @@ public class Rocket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Thrust();
-        Rotate();
+        if (state == State.Alive) {
+            Thrust();
+            Rotate();
+        }
 	}
 
     void OnCollisionEnter(Collision collision)
     {
+
+        if (state != State.Alive) { return; } ;
+        
+
         switch (collision.gameObject.tag) {
             case "Friendly":
-                print("Okay");
+                //Do nothing
                 break;
-            case "Fuel":
-                print("Fuel");
+            case "Finish":
+                state = State.Tanscending;
+                Invoke("LoadNextLevel", 1f);
                 break;
             default:
                 print("DEAD");
+                state = State.Dying;
+                Invoke("LoadFirstLevel", 1f);
                 break;
         }
+    }
+
+    private  void LoadFirstLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    //TODO allow for more than 2 levels
+    private  void LoadNextLevel()
+    {
+        SceneManager.LoadScene(1);
     }
 
     private void Thrust()
