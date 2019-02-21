@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour {
 
-    //TODO Fix lighting bug
     [SerializeField] float rcsThrust = 150f;
     [SerializeField] float mainThrust = 25f;
 
@@ -21,6 +20,7 @@ public class Rocket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //todo fix audio when not alive
         if (state == State.Alive) {
             Thrust();
             Rotate();
@@ -39,12 +39,12 @@ public class Rocket : MonoBehaviour {
                 break;
             case "Finish":
                 state = State.Tanscending;
-                Invoke("LoadNextLevel", 1f);
+                Invoke("LoadNextLevel", 1f); //todo parameritize time
                 break;
             default:
                 print("DEAD");
                 state = State.Dying;
-                Invoke("LoadFirstLevel", 1f);
+                Invoke("LoadFirstLevel", 1f); //todo parameritize time
                 break;
         }
     }
