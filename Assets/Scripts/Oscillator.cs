@@ -15,10 +15,12 @@ public class Oscillator : MonoBehaviour {
 	void Start () {
         startingPos = transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        //Todo protect against divide by 0
+
+    // Update is called once per frame
+    void Update() {
+        //protect against divide by 0
+        if (period <= Mathf.Epsilon) { return; }
+
         float cycles = Time.time / period;
 
         const float tau = Mathf.PI * 2;
